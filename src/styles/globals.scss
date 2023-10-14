@@ -1,0 +1,107 @@
+:root,
+[data-theme='default'] {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	/* color-scheme: light dark; */
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	--color-primary: #4b7afc;
+	--color-primary-200: #4570e6;
+	--color-primary-300: #416ad9;
+	--color-primary-contrast: #fff;
+
+	--color-neutral: #fdfdfd;
+	--color-neutral-50: #f7f7f7;
+	--color-neutral-100: #f2f2f2;
+	--color-neutral-200: #dfe1e1;
+	--color-neutral-300: #dfe1e1;
+	--color-neutral-alpha: rgba(255, 255, 255, 0.1);
+	--color-neutral-contrast: #222;
+
+	/* Dark Variants */
+	// --color-neutral: #111;
+	// --color-neutral-50: #222;
+	// --color-neutral-100: #303030;
+	// --color-neutral-200: #454545;
+	// --color-neutral-300: #555555;
+	// --color-neutral-alpha: black;
+	// --color-neutral-contrast: #fff;
+
+	--color-danger: #e11d48;
+	--color-danger-200: #cb1a41;
+	--color-danger-300: #b51739;
+	--color-danger-contrast: #fff;
+
+	--color-error: #e11d48;
+	--color-success: #059669;
+
+	--border-color: #ddd;
+
+	color: var(--color-neutral-contrast);
+	background-color: var(--color-neutral);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--color-neutral-contrast);
+	margin: 0;
+}
+
+div,
+span {
+	color: var(--color-neutral-contrast);
+}
+
+* {
+	box-sizing: border-box;
+	scrollbar-color: var(--color-neutral-200) transparent;
+	scrollbar-width: thin;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	place-items: center;
+	min-width: 320px;
+	height: 100%;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+	background: var(--color-neutral);
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+	background: var(--color-neutral-200);
+	border-radius: 10px;
+}
+
+/* Scrollbar Thumb on Hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+/* Scrollbar Button */
+::-webkit-scrollbar-button {
+	display: none;
+}
+
+/* Add smooth scrolling */
+::-webkit-scrollbar {
+	width: 0.6rem;
+	height: 0.6rem;
+	scrollbar-color: var(--color-neutral-200) transparent;
+	scrollbar-width: thin;
+}
