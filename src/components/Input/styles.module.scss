@@ -1,0 +1,99 @@
+.container {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.inputWrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.icon {
+	position: absolute;
+	width: 16px;
+	margin-left: 10px;
+	height: 100%;
+}
+
+.leadIcon {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	margin-left: 10px;
+	position: absolute;
+	color: var(--color-neutral-contrast);
+}
+
+.revealButton {
+	position: absolute;
+	top: 0;
+	color: var(--color-neutral-contrast);
+	height: 24px;
+	margin: 8px;
+	box-sizing: border-box;
+	right: 0;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+}
+
+.trailIcon {
+	cursor: pointer;
+
+	position: absolute;
+	top: 0;
+	height: 100%;
+	color: var(--color-neutral-contrast);
+	right: 0;
+}
+
+.input {
+	font-family: inherit;
+	box-sizing: border-box;
+	width: 100%;
+	height: 40px;
+	border: 1px solid var(--color-neutral-300);
+	background-color: var(--color-neutral-50);
+	color: var(--color-neutral-contrast);
+	border-radius: 4px;
+	padding: 0 10px;
+	font-size: 14px;
+	transition:
+		border-color 0.15s ease-in-out,
+		box-shadow 0.15s ease-in-out;
+}
+
+.inputPassword {
+	padding-right: 34px;
+}
+
+.inputError {
+	border-color: var(--color-error);
+	border-left: 5px solid var(--color-error);
+}
+
+.inputIcon {
+	padding-left: 32px;
+}
+
+.label {
+	text-align: start;
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--color-neutral-contrast);
+	margin-bottom: 5px;
+}
+
+.errorMessage {
+	text-align: start;
+	color: var(--color-error);
+	font-size: 12px;
+	margin-top: 5px;
+	margin-left: 0;
+	padding-left: 0px;
+}

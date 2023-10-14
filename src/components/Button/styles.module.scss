@@ -1,0 +1,81 @@
+// Base Button Styles
+.button {
+	background-color: var(--color-neutral);
+	border: 1px solid var(--color-neutral-200);
+	border-radius: 4px;
+	color: var(--color-neutral-contrast);
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+	height: 36px;
+	padding: 0 15px;
+	transition: background-color 0.15s ease-in-out;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+  
+	&:hover {
+	  background-color: var(--color-neutral-100);
+	}
+  
+	&:active {
+	  background-color: var(--color-neutral-200);
+	}
+  
+	&:disabled {
+	  opacity: 0.5;
+	  cursor: default;
+	}
+  }
+  
+  // Danger Variant
+  .danger {
+	background-color: var(--color-danger);
+	border: 1px solid var(--color-danger);
+	color: var(--color-danger-contrast);
+  
+	&:hover {
+	  background-color: var(--color-danger-200);
+	}
+  
+	&:active {
+	  background-color: var(--color-danger-300);
+	}
+  }
+  
+  // Primary Variant
+  .primary {
+	background-color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	color: var(--color-primary-contrast);
+  
+	&:hover {
+	  background-color: var(--color-primary-200);
+	}
+  
+	&:active {
+	  background-color: var(--color-primary-300);
+	}
+  }
+
+  .loader {
+    width: 16px;
+    height: 16px;
+    border: 2.8px solid var(--color-primary-contrast);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
