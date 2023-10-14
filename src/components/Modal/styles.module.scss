@@ -1,0 +1,60 @@
+.modal {
+	position: relative;
+	background-color: var(--color-neutral);
+	border-radius: 6px;
+	border: 1px solid var(--color-neutral-200);
+	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+	padding: 6px;
+	max-height: 80%;
+	width: 480px;
+	max-width: 80%;
+	outline: none;
+
+	&[open] {
+		animation: show 250ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
+		&.modal--closing {
+			animation: hide 150ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+		}
+	}
+
+	&::backdrop {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: var(--color-neutral-alpha);
+		backdrop-filter: blur(6px);
+		animation: none;
+	}
+
+	& .modal__container {
+		box-sizing: border-box;
+		min-height: 50px;
+		min-width: 50px;
+		padding: 1rem;
+	}
+}
+
+@keyframes show {
+	from {
+		opacity: 0;
+		transform: translateY(min(100px, 5vh));
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+
+@keyframes hide {
+	from {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(min(100px, 5vh));
+	}
+}
