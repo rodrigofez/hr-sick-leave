@@ -6,6 +6,7 @@ import AuthLayout from './layout/AuthLayout';
 import DashboardLayout from './layout/DashboardLayout';
 import Login from './screens/Auth/Login';
 import NotFound from './screens/NotFound';
+import ApplicationsScreen from './screens/Applications';
 
 const AuthRouter = createBrowserRouter([
 	{
@@ -14,7 +15,7 @@ const AuthRouter = createBrowserRouter([
 		element: <DashboardLayout />,
 		children: [
 			{ path: '/', element: <div>Dashboard</div> },
-			{ path: 'applications', element: <div>Applications</div> },
+			{ path: 'applications', element: <ApplicationsScreen /> },
 		],
 	},
 	{

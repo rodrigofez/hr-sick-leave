@@ -154,7 +154,9 @@ const useApplicationForm = ({
 					.substring(0, 10) as unknown as Date,
 				employeeId: {
 					value: initialState?.employeeId.toString(),
-					label: `${initialState?.employee.firstName} ${initialState?.employee.lastName} | DUI: ${initialState?.employee.dui}`,
+					label: isHrEspecialist
+						? `${initialState?.employee.firstName} ${initialState?.employee.lastName} | DUI: ${initialState?.employee.dui}`
+						: 'Personal',
 				},
 				medicalUnit: {
 					value: initialState?.medicalUnit,
