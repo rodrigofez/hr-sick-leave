@@ -1,0 +1,78 @@
+.iconButton {
+	cursor: pointer;
+	height: 36px;
+	outline: none;
+	padding: 0;
+	position: relative;
+	width: 36px;
+	color: var(--color-neutral-contrast);
+	background-color: var(--color-neutral);
+	display: flex;
+	border-radius: 4px;
+	border: 1px solid var(--color-neutral-200);
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		background-color: var(--color-neutral-100);
+	  }
+	
+	  &:active {
+		background-color: var(--color-neutral-200);
+	  }
+	
+	  &:disabled {
+		opacity: 0.5;
+	  }
+
+}
+
+  // Danger Variant
+  .danger {
+	background-color: var(--color-danger);
+	border: 1px solid var(--color-danger);
+	color: var(--color-danger-contrast);
+  
+	&:hover {
+	  background-color: var(--color-danger-200);
+	}
+  
+	&:active {
+	  background-color: var(--color-danger-300);
+	}
+  }
+  
+  // Primary Variant
+  .primary {
+	background-color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	color: var(--color-primary-contrast);
+  
+	&:hover {
+	  background-color: var(--color-primary-200);
+	}
+  
+	&:active {
+	  background-color: var(--color-primary-300);
+	}
+  }
+
+  .md {
+	height: 28px;
+	width: 28px;
+  }
+
+.notificationBadge {
+	position: absolute;
+	top: -6px;
+	right: -6px;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background-color: var(--color-primary);
+	color: var(--color-primary-contrast);
+	font-size: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
