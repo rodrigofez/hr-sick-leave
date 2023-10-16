@@ -181,26 +181,13 @@ function ApplicationsScreen() {
 
 	return (
 		<>
-			<div
-				style={{
-					paddingBottom: '24px',
-					display: 'flex',
-					justifyContent: 'flex-end',
-					alignContent: 'center',
-					alignItems: 'center',
-					gap: '8px',
-				}}
-			>
+			<div className={styles.actionsContainer}>
 				<Input
 					icon={<MagnifyingGlassIcon />}
 					placeholder="Search"
 					onChange={(e) => setGlobalFilter(e.target.value)}
 				/>
-				<Button
-					style={{ width: '160px' }}
-					variant="primary"
-					onClick={() => setIsOpen(true)}
-				>
+				<Button variant="primary" onClick={() => setIsOpen(true)}>
 					<FilePlusIcon /> Add new
 				</Button>
 			</div>
