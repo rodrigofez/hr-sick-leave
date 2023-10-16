@@ -19,7 +19,7 @@ import {
 import { Role, useAuthStore } from '../../stores/authStore';
 import { Application } from '../../types/applications';
 import { api } from '../../utils/api';
-import ErrorMessage from '../Error';
+import ErrorMessage from '../../components/Error';
 import ActionsCell from './components/ActionsCell';
 import ApplicationFormModal from './components/ApplicationFormModal';
 
