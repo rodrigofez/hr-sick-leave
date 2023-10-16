@@ -13,24 +13,24 @@ import styles from './styles.module.scss';
 
 import {
 	ArrowLeftIcon,
-	BellIcon,
-	DashboardIcon,
 	ExitIcon,
 	FilePlusIcon,
 	HamburgerMenuIcon,
+	PersonIcon,
 } from '@radix-ui/react-icons';
 
+import { useQueryClient } from '@tanstack/react-query';
 import Logo from '../../assets/HR.svg';
-import { Role, useAuthStore } from '../../stores/authStore';
 import Button from '../../components/Button';
+import { Auth, Role, useAuthStore } from '../../stores/authStore';
 
 const routes = [
-	{
-		path: '/',
-		title: 'Dashboard',
-		roles: [Role.HR_ESPECIALIST],
-		icon: <DashboardIcon />,
-	},
+	// {
+	// 	path: '/',
+	// 	title: 'Dashboard',
+	// 	roles: [Role.HR_ESPECIALIST],
+	// 	icon: <DashboardIcon />,
+	// },
 	{
 		path: '/applications',
 		title: 'Applications',
@@ -44,13 +44,20 @@ const DashboardLayout = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const { pathname } = useLocation();
 
+	const queryClient = useQueryClient();
+
 	const navigate = useNavigate();
 
-	const [accessToken, role, logOut] = useAuthStore((state) => [
-		state.accessToken,
-		state.role,
-		state.logOut,
-	]);
+	const {
+		accessToken,
+		role,
+		firstName,
+		logOut,
+		lastName,
+		dui,
+		email,
+		startDate,
+	} = useAuthStore((state) => state);
 
 	const closeMenu = () => {
 		setMenuOpen(false);
@@ -67,6 +74,7 @@ const DashboardLayout = () => {
 	const handleLogout = () => {
 		logOut();
 		navigate('/auth/login');
+		queryClient.removeQueries();
 	};
 
 	if (!accessToken) return <Navigate to="/auth/login" />;
@@ -134,14 +142,58 @@ const DashboardLayout = () => {
 						<IconButton icon={<HamburgerMenuIcon />} onClick={openMenu} />
 					</div>
 					<h3> {routes.find((route) => route.path == pathname)?.title} </h3>
-					<Popover content={<div>...</div>}>
-						<IconButton icon={<BellIcon />} notificationQuantity={3} />
+					<Popover
+						content={
+							<UserCard
+								firstName={firstName}
+								lastName={lastName}
+								role={role}
+								email={email}
+								startDate={startDate}
+								dui={dui}
+							/>
+						}
+					>
+						<IconButton icon={<PersonIcon />} />
 					</Popover>
 				</div>
 				<div className={styles.content}>
 					<Outlet />
 				</div>
 			</div>
+		</div>
+	);
+};
+
+const UserCard = ({
+	firstName,
+	lastName,
+	role,
+	email,
+	startDate,
+	dui,
+}: Partial<Auth>) => {
+	return (
+		<div className={styles.userMenu}>
+			<div className={styles.userMenuItem}>
+				<div className={styles.userAvatar}>
+					<PersonIcon />
+				</div>
+				<div className={styles.userMenuItemLabel}>
+					{firstName} {lastName}
+				</div>
+			</div>
+			<div className={styles.userMenuItemSubLabel}>
+				{role?.replace('_', ' ')}
+			</div>
+			<div className={styles.userMenuItemSubLabel}>{email}</div>
+
+			{startDate && (
+				<div className={styles.userMenuItemSubLabel}>
+					Since {new Date(startDate).toDateString()}
+				</div>
+			)}
+			<div className={styles.userMenuItemSubLabel}>DUI: {dui}</div>
 		</div>
 	);
 };

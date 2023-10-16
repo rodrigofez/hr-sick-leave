@@ -271,6 +271,51 @@
 	}
 }
 
+.userMenu {
+	top: 100%;
+	right: 0;
+	padding: 0px;
+	z-index: 1;
+	margin-top: 4px;
+
+	.userMenuItem {
+		font-size: 14px;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 10px;
+		padding: 6px 5px;
+		border-radius: 4px;
+		padding-bottom: 10px;
+		cursor: pointer;
+		transition: all 0.2s;
+
+		.userAvatar {
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			background-color: var(--color-neutral-200);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	.userMenuItemSubLabel {
+		font-size: 12px;
+		font-weight: 400;
+		color: var(--color-neutral-400);
+		background-color: var(--color-neutral-100);
+		padding: 4px 8px;
+		border-radius: 4px;
+		margin-top: 4px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
 @keyframes backdrop {
 	0% {
 		opacity: 0;

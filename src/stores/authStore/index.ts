@@ -14,6 +14,8 @@ export type Auth = {
 	lastName?: string;
 	email?: string;
 	role?: Role;
+	startDate?: string;
+	dui?: string;
 };
 
 export type AuthStore = Auth & {
@@ -29,6 +31,8 @@ const initialState = {
 	lastName: undefined,
 	email: undefined,
 	role: undefined,
+	startDate: undefined,
+	dui: undefined,
 };
 
 export const useAuthStore = create<AuthStore>()(

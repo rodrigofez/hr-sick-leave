@@ -15,52 +15,53 @@
 
 	&:hover {
 		background-color: var(--color-neutral-100);
-	  }
-	
-	  &:active {
-		background-color: var(--color-neutral-200);
-	  }
-	
-	  &:disabled {
-		opacity: 0.5;
-	  }
+	}
 
+	&:active {
+		background-color: var(--color-neutral-200);
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: default;
+		pointer-events: none;
+	}
 }
 
-  // Danger Variant
-  .danger {
+// Danger Variant
+.danger {
 	background-color: var(--color-danger);
 	border: 1px solid var(--color-danger);
 	color: var(--color-danger-contrast);
-  
+
 	&:hover {
-	  background-color: var(--color-danger-200);
+		background-color: var(--color-danger-200);
 	}
-  
+
 	&:active {
-	  background-color: var(--color-danger-300);
+		background-color: var(--color-danger-300);
 	}
-  }
-  
-  // Primary Variant
-  .primary {
+}
+
+// Primary Variant
+.primary {
 	background-color: var(--color-primary);
 	border: 1px solid var(--color-primary);
 	color: var(--color-primary-contrast);
-  
-	&:hover {
-	  background-color: var(--color-primary-200);
-	}
-  
-	&:active {
-	  background-color: var(--color-primary-300);
-	}
-  }
 
-  .md {
+	&:hover {
+		background-color: var(--color-primary-200);
+	}
+
+	&:active {
+		background-color: var(--color-primary-300);
+	}
+}
+
+.md {
 	height: 28px;
 	width: 28px;
-  }
+}
 
 .notificationBadge {
 	position: absolute;

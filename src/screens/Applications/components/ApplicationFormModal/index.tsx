@@ -32,8 +32,6 @@ const ApplicationFormModal: FC<Props> = ({ isOpen, ...props }) => {
 
 	const title = applicationId ? 'Update application' : 'Create application';
 
-	if (employeeOptions.isLoading) return <div>Loading...</div>;
-
 	return (
 		<Modal open={isOpen} locked={false} onClose={handleClose}>
 			<form

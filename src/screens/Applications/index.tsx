@@ -4,18 +4,13 @@ import { ColumnDef } from '@tanstack/react-table';
 
 import styles from './styles.module.scss';
 
-import {
-	FilePlusIcon,
-	MagnifyingGlassIcon,
-	Pencil1Icon,
-	TrashIcon,
-} from '@radix-ui/react-icons';
+import { FilePlusIcon, MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { toast } from 'sonner';
 import Button from '../../components/Button';
-import IconButton from '../../components/IconButton';
 import Input from '../../components/Input';
 import Modal from '../../components/Modal';
+import Skeleton from '../../components/Skeleton';
 import Table from '../../components/Table';
 import {
 	getApplications,
@@ -24,6 +19,8 @@ import {
 import { Role, useAuthStore } from '../../stores/authStore';
 import { Application } from '../../types/applications';
 import { api } from '../../utils/api';
+import ErrorMessage from '../Error';
+import ActionsCell from './components/ActionsCell';
 import ApplicationFormModal from './components/ApplicationFormModal';
 
 const TextCell = ({ children }: { children: React.ReactNode }) => {
@@ -32,21 +29,6 @@ const TextCell = ({ children }: { children: React.ReactNode }) => {
 
 const DateCell = ({ date }: { date: string | Date }) => {
 	return <div className={styles.cell}>{new Date(date).toDateString()}</div>;
-};
-
-const ActionsCell = ({
-	onDelete,
-	onEdit,
-}: {
-	onDelete: () => void;
-	onEdit: () => void;
-}) => {
-	return (
-		<div style={{ display: 'flex', gap: '8px' }}>
-			<IconButton icon={<Pencil1Icon />} onClick={onEdit} />
-			<IconButton variant="danger" icon={<TrashIcon />} onClick={onDelete} />
-		</div>
-	);
 };
 
 function ApplicationsScreen() {
@@ -192,10 +174,10 @@ function ApplicationsScreen() {
 		(isHrEspecialist && isLoading) ||
 		(!isHrEspecialist && isLoadingByEmployee)
 	)
-		return <div>Loading...</div>;
+		return <Skeleton />;
 
 	if ((isHrEspecialist && isError) || (!isHrEspecialist && isErrorByEmployee))
-		return <div>Error</div>;
+		return <ErrorMessage />;
 
 	return (
 		<>

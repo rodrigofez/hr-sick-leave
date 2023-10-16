@@ -1,32 +1,23 @@
 /* Popover.module.scss */
 .popover {
-    position: relative;
-    display: inline-block;
-  
-    .trigger {
-      cursor: pointer;
-    }
-  
-    .popover-content {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 8px;
-      z-index: 1;
-      min-width: 200px;
-      margin-top: 4px;
-    }
-  
-    .arrow {
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      border-width: 10px;
-      border-style: solid;
-      border-color: transparent transparent #fff transparent;
-    }
-  }
-  
+	position: relative;
+	display: inline-block;
+
+	.trigger {
+		cursor: pointer;
+	}
+
+	.popover-content {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		background-color: var(--color-neutral);
+		border: 1px solid var(--color-neutral-200);
+		border-radius: 4px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		padding: 8px;
+		z-index: 1;
+		min-width: 200px;
+		margin-top: 4px;
+	}
+}

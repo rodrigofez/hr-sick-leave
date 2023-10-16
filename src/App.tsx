@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+	createBrowserRouter,
+	Navigate,
+	RouterProvider,
+} from 'react-router-dom';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'sonner';
@@ -14,7 +18,7 @@ const AuthRouter = createBrowserRouter([
 		path: '/',
 		element: <DashboardLayout />,
 		children: [
-			{ path: '/', element: <div>Dashboard</div> },
+			{ path: '/', element: <Navigate to="/applications" /> },
 			{ path: 'applications', element: <ApplicationsScreen /> },
 		],
 	},
