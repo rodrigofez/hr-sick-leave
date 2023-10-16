@@ -184,7 +184,7 @@ const UserCard = ({
 				</div>
 			</div>
 			<div className={styles.userMenuItemSubLabel}>
-				{role?.replace('_', ' ')}
+				{role == Role.HR_ESPECIALIST ? 'HR Specialist' : 'Employee'}
 			</div>
 			<div className={styles.userMenuItemSubLabel}>{email}</div>
 

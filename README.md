@@ -3,16 +3,17 @@
 Deployed at
 https://hr-sick-leave.vercel.app/
 
+HR Specialist credentials
 
-HR Especialist credentials
 ```bash
 {
- "email": "hrespecialist@admin.com",
- "password": "especialist"
+ "email": "hr@admin.com",
+ "password": "hradmin"
 }
 ```
 
 Employee credentials
+
 ```bash
 {
  "email": "employee@admin.com",
@@ -21,6 +22,7 @@ Employee credentials
 ```
 
 ## Technologies
+
 - Typescript
 - Zustand
 - SASS
